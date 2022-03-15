@@ -1,7 +1,7 @@
 var mysql = require('mysql')
 
 let db = function () {
-  let con = mysql.createConnection({
+  let pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     database: process.env.DB_DATABASE,
@@ -14,7 +14,7 @@ let db = function () {
   //     console.log(result)
   //   })
 
-  return con
+  return pool
 }
 
 export default new db()
