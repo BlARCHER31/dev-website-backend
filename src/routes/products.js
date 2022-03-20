@@ -5,7 +5,7 @@ import db from '../startup/db'
 /* Gets ALL products from the database. */
 router.get('/', async (req, res) => {
   let sql =
-    'SELECT * FROM products INNER JOIN product_img ON products.img_id = product_img.id'
+    'SELECT products.id, products.price, products.title, product_img.img_url, products.description FROM products INNER JOIN product_img ON products.img_id = product_img.id'
   db.query(sql, function (err, result) {
     if (err) throw err
     console.log(result)
