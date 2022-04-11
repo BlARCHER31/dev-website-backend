@@ -1,4 +1,0 @@
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/zwtedhmy/public_html/rih/node-backend
-    - /bin/cp app.js $DEPLOYPATH
